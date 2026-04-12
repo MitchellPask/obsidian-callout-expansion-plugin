@@ -1,0 +1,80 @@
+/* ----------- Callout wrapper styling ----------- */
+.callout[data-callout="col"] > .callout-title { display: none; } /* hide the [!col] callout's own title and border */
+.callout[data-callout="col"] > .callout-content { display: contents; }
+.callout[data-callout="col"] {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--col-gap);
+  background: unset;
+  border: unset;
+  padding: unset;
+  margin: unset;
+  box-shadow: unset;
+  margin: 16px 0px;
+}
+
+/* Callout children become flex columns */
+.callout[data-callout="col"] > .callout-content > .callout {
+  flex: 1 1 var(--col-min-width);
+  display: flex;
+  flex-direction: column;
+}
+
+/* This is just for helping with collapsing callouts on mobile */
+@media (max-width: 500px) {
+  .callout[data-callout="col"] {
+    flex-direction: column;
+  }
+}
+
+
+/* ----------- Hover brightening ----------- */
+/* Add buffer space for callouts to not cut off box shadow */
+.callout .callout {
+  margin: 3px 3px !important;
+    /* margin-left: 5px;
+    margin-right: 5px; */
+}
+
+.callout:not([data-callout="col"]) {
+  transition: filter 0.18s ease, box-shadow 0.18s ease;
+}
+
+.callout:not([data-callout="col"]):hover {
+  filter: brightness(1.20);
+  box-shadow: 0 0 0 1.5px rgba(var(--callout-color), 0.75);
+}
+
+/* ----------- Custom callout styling ----------- */
+/* https://lucide.dev/icons/ */
+/* Note: Just use a browser color picker for rgba values */
+
+/* combat: orange */
+.callout[data-callout="combat"] {
+  --callout-color: 247, 124, 24;
+  background-color: rgba(var(--callout-color), 0.15);
+  --callout-icon: lucide-swords;
+  --callout-blend-mode: normal;
+}
+
+/* treasure: yellow */
+.callout[data-callout="treasure"] {
+  --callout-color: 249, 253, 24;
+  background-color: rgba(var(--callout-color), 0.15);
+  --callout-icon: lucide-key;
+  --callout-blend-mode: normal;
+}
+
+/* dice-roll: fuchsia */
+.callout[data-callout="dice-roll"] {
+  --callout-color: 215, 0, 235;
+  background-color: rgba(var(--callout-color), 0.15);
+  --callout-icon: lucide-dices;
+  --callout-blend-mode: normal;
+}
+
+/* Title (icon, text, collapse arrow) styling for every custom callout */
+.callout[data-callout] .callout-title {
+  color: rgb(var(--callout-color, 255 0 0));
+}

@@ -47,32 +47,33 @@
 }
 
 /* ----------- Custom callout styling ----------- */
+/* NOTE: THIS IS NOW HANDLED IN THE SETTINGS PAGE! */
 /* https://lucide.dev/icons/ */
 /* Note: Just use a browser color picker for rgba values */
 
 /* combat: orange */
-.callout[data-callout="combat"] {
+/* .callout[data-callout="combat"] {
   --callout-color: 247, 124, 24;
   background-color: rgba(var(--callout-color), 0.15);
   --callout-icon: lucide-swords;
   --callout-blend-mode: normal;
-}
+} */
 
 /* treasure: yellow */
-.callout[data-callout="treasure"] {
+/* .callout[data-callout="treasure"] {
   --callout-color: 249, 253, 24;
   background-color: rgba(var(--callout-color), 0.15);
   --callout-icon: lucide-key;
   --callout-blend-mode: normal;
-}
+} */
 
 /* dice-roll: fuchsia */
-.callout[data-callout="dice-roll"] {
+/* .callout[data-callout="dice-roll"] {
   --callout-color: 215, 0, 235;
   background-color: rgba(var(--callout-color), 0.15);
   --callout-icon: lucide-dices;
   --callout-blend-mode: normal;
-}
+} */
 
 /* Title (icon, text, collapse arrow) styling for every custom callout */
 .callout[data-callout] .callout-title {
